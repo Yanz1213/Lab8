@@ -1,6 +1,5 @@
 package com.example.lab8;
 
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-import java.util.Iterator; // Add this import
 
 public class CustomList extends ArrayAdapter<City> {
 
@@ -53,25 +51,6 @@ public class CustomList extends ArrayAdapter<City> {
 
     public void addCity(City city){
         cities.add(city);
-    }
-    public boolean hasCity(String cityName) {
-        for (City city : cities) {
-            if (city.getCityName().equals(cityName)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public void deleteCity(String cityName) {
-        for (Iterator<City> iterator = cities.iterator(); iterator.hasNext();) {
-            City city = iterator.next();
-            if (city.getCityName().equals(cityName)) {
-                iterator.remove();
-                notifyDataSetChanged();
-                break;
-            }
-        }
     }
 
 }
